@@ -1,0 +1,29 @@
+GET http://localhost:5117/games
+
+###
+GET http://localhost:5117/games/1
+
+###
+GET http://localhost:5117/games/4
+
+###
+POST http://localhost:5117/games
+Content-Type: application/json
+
+{
+    "name": "Metroid Prime",
+    "genre": "Action",
+    "price": 39.99,
+    "releaseDate": "2003-03-21"
+}
+
+###
+PUT http://localhost:5117/games/1
+Content-Type: application/json
+
+{
+    "name": "Cult of Lambs",
+    "genre": "Action",
+    "price": 30,
+    "releaseDate": "2002-02-08"
+}
