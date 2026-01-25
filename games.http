@@ -24,6 +24,9 @@ Content-Type: application/json
 {
     "name": "Cult of Lambs",
     "genre": "Action",
-    "price": 30,
+    "price": 30.00,
     "releaseDate": "2002-02-08"
 }
+
+###
+DELETE http://localhost:5117/games/1

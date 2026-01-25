@@ -1,4 +1,5 @@
 using GameStore.Api.Dtos;
+using Microsoft.AspNetCore.Authentication;
 
 const string GetGameEndpointName = "GetGame";
 
@@ -34,6 +35,7 @@ app.MapPost("/games", (CreateGameDto newGame) =>
     return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
 });
 
+// PUT /games/1
 app.MapPut("/games/{id}", (int id, UpdateGameDto updateGame) =>
 
 {
@@ -47,6 +49,14 @@ app.MapPut("/games/{id}", (int id, UpdateGameDto updateGame) =>
         updateGame.Price,
         updateGame.ReleaseDate
     );
+    return Results.NoContent();
+});
+
+// DELETE /games/1
+app.MapDelete("/games/{id}", (int id) =>
+{
+    games.RemoveAll(game => game.Id == id);
+
     return Results.NoContent();
 });
 
