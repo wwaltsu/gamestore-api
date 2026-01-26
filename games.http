@@ -3,8 +3,9 @@ GET http://localhost:5117/games
 ###
 GET http://localhost:5117/games/1
 
-###
-GET http://localhost:5117/games/4
+### 
+# Test returning nonexisting game Id, should return 404
+GET http://localhost:5117/games/9999
 
 ###
 POST http://localhost:5117/games
@@ -18,7 +19,19 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5117/games/1
+PUT http://localhost:5117/games/1   
+Content-Type: application/json
+
+{
+    "name": "Cult of Lambs ULTIMATE",
+    "genre": "Action",
+    "price": 30.00,
+    "releaseDate": "2002-02-08"
+}
+
+###
+# Test modify nonexisting game Id, should return 404
+PUT http://localhost:5117/games/9999
 Content-Type: application/json
 
 {
@@ -30,3 +43,7 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:5117/games/1
+
+###
+# Test deleting nonexisting game Id, should return 404
+DELETE http://localhost:5117/games/9999
