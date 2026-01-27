@@ -40,7 +40,10 @@ public static class GamesEndpoints
             );
             games.Add(game);
 
-            return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
+            return Results.CreatedAtRoute(GetGameEndpointName, new
+            {
+                id = game.Id
+            }, game);
         });
 
         // PUT /games/1
@@ -48,7 +51,8 @@ public static class GamesEndpoints
 
         {
             var index = games.FindIndex(game => game.Id == id);
-            if (index == -1) return Results.NotFound();
+            if (index == -1)
+                return Results.NotFound();
 
             games[index] = new GameDto(
                 id,
