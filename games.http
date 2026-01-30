@@ -12,33 +12,32 @@ POST http://localhost:5117/games
 Content-Type: application/json
 
 {
-    "name": "Metroid Prime",
-    "genreId": 12,
-    "price": 39.99,
-    "releaseDate": "2003-03-21"
+    "name": "The Midnight Walk",
+    "genreId": 2,
+    "price": 23.99,
+    "releaseDate": "2025-05-08"
 }
 
 ###
 PUT http://localhost:5117/games/1   
 Content-Type: application/json
-
+    
 {
-    "name": "Cult of Lambs ULTIMATE",
-    "genre": "Action",
-    "price": 30.00,
-    "releaseDate": "2002-02-08"
+    "name": "Hollow Knight",
+    "genreId": 12,
+    "price": 14.99,
+    "releaseDate": "2017-02-24"
 }
-
 ###
 # Test modify nonexisting game Id, should return 404
 PUT http://localhost:5117/games/9999
 Content-Type: application/json
 
 {
-    "name": "Cult of Lambs",
-    "genre": "Action",
-    "price": 30.00,
-    "releaseDate": "2002-02-08"
+    "name": "Hollow Knight",
+    "genreId": 12,
+    "price": 14.99,
+    "releaseDate": "2017-02-24"
 }
 
 ###
