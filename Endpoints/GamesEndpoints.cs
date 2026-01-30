@@ -10,7 +10,7 @@ public static class GamesEndpoints
 {
     const string GetGameEndpointName = "GetGame";
 
-    public static void MapGameEndpoints(this WebApplication app)
+    public static void MapGamesEndpoints(this WebApplication app)
     {
         var gamesGroup = app.MapGroup("/games");
 

@@ -9,6 +9,6 @@ builder.AddGameStoreDb();
 var app = builder.Build();
 
 app.MigrateDb();
-app.MapGameEndpoints();
-
+app.MapGamesEndpoints();
+    
 app.Run();
